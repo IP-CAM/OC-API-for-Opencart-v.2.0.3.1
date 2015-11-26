@@ -7,7 +7,7 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <script src="angular.min.js"></script>
+    <script src="js/angular.min.js"></script>
 
 <!-- //For-Mobile-Apps -->
 <!-- Style --> <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
@@ -41,10 +41,10 @@
 <script>
   var app = angular.module('myApp', []);
   app.controller('customersCtrl', function($scope, $http) {
-    $scope.url ="http://localhost/oc-api/opencart/";
+    $scope.url ="http://localhost/opencart/";
     var req = {
                method: 'POST',
-               url: 'http://localhost/oc-api/opencart/index.php?route=api/login/',
+               url: 'http://localhost/opencart/index.php?route=api/login/',
                    transformRequest: function(obj) {
                     var str = [];
                     for(var p in obj)
@@ -64,7 +64,7 @@
       $scope.login = function() {
         var login = {
                    method: 'POST',
-                   url: 'http://localhost/oc-api/opencart/index.php?route=api/login/login',
+                   url: 'http://localhost/opencart/index.php?route=api/login/login',
                        transformRequest: function(obj) {
                         var str = [];
                         for(var p in obj)
@@ -77,7 +77,10 @@
                           },
                   headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                   }
-          $http(login).success(function(response) {$location.path('/test.html');});
+          $http(login).success(function(response) {
+            //$location.path('/test');
+            window.location.replace("test.html");
+          });
       };
       $scope.login();
   });
