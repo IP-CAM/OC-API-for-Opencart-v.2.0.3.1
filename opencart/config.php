@@ -1,22 +1,22 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost/opencart/');
+define('HTTP_SERVER', 'http://localhost/oc-api/opencart/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/opencart/');
+define('HTTPS_SERVER', 'http://localhost/oc-api/opencart/');
 
 // DIR
-define('DIR_APPLICATION', 'C:/xampp/htdocs/opencart/catalog/');
-define('DIR_SYSTEM', 'C:/xampp/htdocs/opencart/system/');
-define('DIR_LANGUAGE', 'C:/xampp/htdocs/opencart/catalog/language/');
-define('DIR_TEMPLATE', 'C:/xampp/htdocs/opencart/catalog/view/theme/');
-define('DIR_CONFIG', 'C:/xampp/htdocs/opencart/system/config/');
-define('DIR_IMAGE', 'C:/xampp/htdocs/opencart/image/');
-define('DIR_CACHE', 'C:/xampp/htdocs/opencart/system/cache/');
-define('DIR_DOWNLOAD', 'C:/xampp/htdocs/opencart/system/download/');
-define('DIR_UPLOAD', 'C:/xampp/htdocs/opencart/system/upload/');
-define('DIR_MODIFICATION', 'C:/xampp/htdocs/opencart/system/modification/');
-define('DIR_LOGS', 'C:/xampp/htdocs/opencart/system/logs/');
+define('DIR_APPLICATION', '/opt/lampp/htdocs/oc-api/opencart/catalog/');
+define('DIR_SYSTEM', '/opt/lampp/htdocs/oc-api/opencart/system/');
+define('DIR_LANGUAGE', '/opt/lampp/htdocs/oc-api/opencart/catalog/language/');
+define('DIR_TEMPLATE', '/opt/lampp/htdocs/oc-api/opencart/catalog/view/theme/');
+define('DIR_CONFIG', '/opt/lampp/htdocs/oc-api/opencart/system/config/');
+define('DIR_IMAGE', '/opt/lampp/htdocs/oc-api/opencart/image/');
+define('DIR_CACHE', '/opt/lampp/htdocs/oc-api/opencart/system/cache/');
+define('DIR_DOWNLOAD', '/opt/lampp/htdocs/oc-api/opencart/system/download/');
+define('DIR_UPLOAD', '/opt/lampp/htdocs/oc-api/opencart/system/upload/');
+define('DIR_MODIFICATION', '/opt/lampp/htdocs/oc-api/opencart/system/modification/');
+define('DIR_LOGS', '/opt/lampp/htdocs/oc-api/opencart/system/logs/');
 
 // DB
 define('DB_DRIVER', 'mysqli');

@@ -54,7 +54,7 @@ class ControllerApiLogin extends Controller {
 
 				$json['message'] = "login berhasil";
 			} else {
-				$json['message'] = "login berhasil";
+				$json['message'] = "login gagal";
 			}
 
 			$this->response->addHeader('Content-Type: application/json');
