@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="afterlogin" ng-controller="customersCtrl">
   <head>
     <meta charset="utf-8">
     <title>Login Member</title>
@@ -12,138 +12,11 @@
     Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="js/angular.min.js"></script>
   </head>
   <body>
     <!--header-->
-    <div class="header">
-    	<div class="header-top">
-    		<div class="container">
-    		<div class="col-sm-4 world">
-    					<ul >
-    						<li>
-    						<select class="in-drop">
-    							  <option>English</option>
-    							</select></li>
-    						<li><select class="in-drop1">
-    							  <option>Dollar</option>
-    							</select>
-    						</li>
-    					</ul>
-    				</div>
-    				<div class="col-sm-4 logo">
-    					<a href="index.html"><img src="images/logo.png" alt=""></a>
-    				</div>
-
-    			<div class="col-sm-4 header-left">
-    					<p class="log"><a href="account.html"  >Login</a>
-    						<span>or</span><a  href="account.html"  >Signup</a></p>
-    					<div class="cart box_1">
-    						<a href="checkout.html">
-    						<h3> <div class="total">
-    							<span class="simpleCart_total"></span></div>
-    							<img src="images/cart.png" alt=""/></h3>
-    						</a>
-    						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
-    					</div>
-    					<div class="clearfix"> </div>
-    			</div>
-    				<div class="clearfix"> </div>
-    		</div>
-    		</div>
-    		<div class="container">
-    			<div class="head-top">
-    				<div class="col-sm-2 number">
-    					<span><i class="glyphicon glyphicon-phone"></i>085 596 234</span>
-    				</div>
-    		 <div class="col-sm-8 h_menu4">
-    				<ul class="memenu skyblue">
-    					  <li class=" grid"><a  href="index.html">Home</a></li>
-    				      <li><a  href="#">Men</a>
-    				      	<div class="mepanel">
-    						<div class="row">
-    							<div class="col1">
-    								<div class="h_nav">
-    									<h4>All Clothing</h4>
-    									<ul>
-    										<li><a href="products.html">Shirts</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="col1">
-    								<div class="h_nav">
-    									<h4>Footwear</h4>
-    									<ul>
-    										<li><a href="products.html">Formal Shoes</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="col1">
-    								<div class="h_nav">
-    									<h4>Popular Brands</h4>
-    									<ul>
-    										<li><a href="products.html">Levis</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    						  </div>
-    						</div>
-    					</li>
-    				    <li class="grid"><a  href="#">	Women</a>
-    					  	<div class="mepanel">
-    						<div class="row">
-    							<div class="col1">
-    								<div class="h_nav">
-    									<h4>All Clothing</h4>
-    									<ul>
-    										<li><a href="products.html">Shirts & Tops</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="col1">
-    								<div class="h_nav">
-    									<h4>Footwear</h4>
-    									<ul>
-    										<li><a href="products.html">Heels</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    							<div class="col1">
-    								<div class="h_nav">
-    									<h4>Popular Brands</h4>
-    									<ul>
-    										<li><a href="products.html">Levis</a></li>
-    									</ul>
-    								</div>
-    							</div>
-    						  </div>
-    						</div>
-    			    </li>
-    				<li><a  href="typo.html">Blog</a></li>
-    				<li><a class="color6" href="contact.html">Conact</a></li>
-    			  </ul>
-    			</div>
-    				<div class="col-sm-2 search">
-    			<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
-    		</div>
-    		<div class="clearfix"> </div>
-    			<!---pop-up-box---->
-    					  <script type="text/javascript" src="js/modernizr.custom.min.js"></script>
-    					<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
-    					<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-    					<!---//pop-up-box---->
-    				<div id="small-dialog" class="mfp-hide">
-    				<div class="search-top">
-    						<div class="login">
-    							<input type="submit" value="">
-    							<input type="text" value="Type something..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-    						</div>
-    						<p>	Shopping</p>
-    					</div>
-    				</div>
-    		</div>
-    	</div>
-    </div>
+    <header-main></header-main>
     <!--banner-->
     <div class="banner">
     	<div class="col-sm-3 banner-mat">
@@ -172,12 +45,12 @@
     		<div class="content-top">
     			<h1>Recent Products</h1>
     			<div class="content-top1">
-    				<div class="col-md-3 col-md2">
+    				<div ng-repeat="x in products" class="col-md-3 col-md2">
     					<div class="col-md1 simpleCart_shelfItem">
     						<a href="single.html">
     							<img class="img-responsive" src="images/pi.png" alt="" />
     						</a>
-    						<h3><a href="single.html">Tops</a></h3>
+    						<h3><a href="single.html">  {{ x.name }}</a></h3>
     						<div class="price">
     								<h5 class="item_price">$300</h5>
     								<a href="#" class="item_add">Add To Cart</a>
@@ -185,7 +58,7 @@
     						</div>
     					</div>
     				</div>
-    			<div class="clearfix"> </div>
+    			<div ng-if="n == 4" class="clearfix"> </div>
     			</div>
     			<div class="content-top1">
     				<div class="col-md-3 col-md2">
@@ -209,60 +82,43 @@
     </div>
     <!--//content-->
     <!--footer-->
-    <div class="footer">
-    	<div class="container">
-    		<div class="footer-top">
-    			<div class="col-md-8 top-footer">
-    				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.91163207516!2d2.3470599!3d48.85885894999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C+France!5e0!3m2!1sen!2sin!4v1436340519910" allowfullscreen=""></iframe>
-    			</div>
-    			<div class="col-md-4 top-footer1">
-    				<h2>Newsletter</h2>
-    					<form>
-    						<input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
-    						<input type="submit" value="SUBSCRIBE">
-    					</form>
-    			</div>
-    			<div class="clearfix"> </div>
-    		</div>
-    	</div>
-    	<div class="footer-bottom">
-    		<div class="container">
-    				<div class="col-sm-3 footer-bottom-cate">
-    					<h6>Categories</h6>
-    					<ul>
-    						<li><a href="#">Curabitur sapien</a></li>
-    					</ul>
-    				</div>
-    				<div class="col-sm-3 footer-bottom-cate">
-    					<h6>Feature Projects</h6>
-    					<ul>
-    						<li><a href="#">Curabitur sapien</a></li>
-    					</ul>
-    				</div>
-    				<div class="col-sm-3 footer-bottom-cate">
-    					<h6>Top Brands</h6>
-    					<ul>
-    						<li><a href="#">Curabitur sapien</a></li>
-    					</ul>
-    				</div>
-    				<div class="col-sm-3 footer-bottom-cate cate-bottom">
-    					<h6>Our Address</h6>
-    					<ul>
-    						<li>Aliquam metus  dui. </li>
-    						<li>orci, ornareidquet</li>
-    						<li> ut,DUI.</li>
-    						<li>nisi, dignissim</li>
-    						<li>gravida at.</li>
-    						<li class="phone">PH : 6985792466</li>
-    					</ul>
-    				</div>
-    				<div class="clearfix"> </div>
-    				<p class="footer-class"> © 2015 Fashion Mania. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-    			</div>
-    	</div>
-    </div>
-
+    <footer-main></footer-main>
     <!--//footer-->
     <script src="js/require.js" data-main="main"></script>
+    <script>
+      var app = angular.module('afterlogin', []);
+      app.directive('headerMain',function(){
+        return{
+          restrict : 'E',
+          templateUrl : 'header.html'
+        }
+      });
+      app.directive('footerMain',function(){
+        return{
+          restrict : 'E',
+          templateUrl : 'footer.html'
+        }
+      });
+      app.controller('customersCtrl', function($scope, $http) {
+        var req = {
+                   method: 'POST',
+                   url: 'http://localhost/oc-api/opencart/index.php?route=api/login/',
+                       transformRequest: function(obj) {
+                        var str = [];
+                        for(var p in obj)
+                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                        return str.join("&");
+                    },
+                   data: {
+                            username: 'F35In5kqf2aXSSab5dO9dMlXFJQhb5dgzYocTOJzHkNZ3n1yGGxjSZ6XjN5AIYg8',
+                            password: 'xKbGZk5gKI5Dvx123pbLFXjokfot4KsrUJxuttQ41M7n9zf2f6EkUoO5K3pEDXvYhiIRSZLKlJxl8TedQjEkNTgYMMcQjNoGwxXENjOysCarV4LldPMrjtFv5hBevqlhe9mrj1gR368P0J0UZDB8wHtrpvMacy86ykoXbKoVHnk8xbSMeULRb48GqLhJAfGyFuLh502CdcAQ3TdYnopEjoLQzsZzNfoTPz1LptNJMOaGh3eLiJPHybYnKxdYSHsi'
+                          },
+                  headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                  }
+          $http(req).success(function(response) {$scope.pesan = response.success;});
+
+          $http.get("http://localhost/oc-api/opencart/index.php?route=api/product/").success(function(response) {$scope.products = response.products;});
+      });
+    </script>
   </body>
 </html>
