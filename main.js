@@ -2,7 +2,6 @@ require.config({
     baseUrl: 'js',
     paths: {
         "jquery"           : 'jquery.min',
-        "angular"          : 'angular.min',
         "index"            : 'index',
         "imagezoom"        : 'imagezoom',
         "flexslider"       : 'jquery.flexslider',
