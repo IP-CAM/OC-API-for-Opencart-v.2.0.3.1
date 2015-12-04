@@ -9,10 +9,15 @@ class ControllerApiProduct extends Controller {
 			$json['error'] = $this->language->get('error_permission');
 		} else {
       $this->load->model('catalog/product');
-
+      $this->load->model('tool/image');
 			$products = $this->model_catalog_product->getProducts();
       if ($products) {
         foreach($products as $product){
+          if ($product['image']) {
+  					$image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+  				} else {
+  					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+  				}
           //$json['product'] = json_encode($product);
           $json['products'][] = array(
   					'product_id' => $product['product_id'],
@@ -20,6 +25,7 @@ class ControllerApiProduct extends Controller {
   					'model'      => $product['model'],
   					'quantity'   => $product['quantity'],
   					'price'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'))),
+            'thumb'       => $image,
   					'reward'     => $product['reward']
   				);
         }
