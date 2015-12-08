@@ -1,0 +1,47 @@
+<!--banner-->
+<div class="banner">
+  <div class="col-sm-3 banner-mat">
+    <img class="img-responsive"	src="images/ba1.jpg" alt="">
+  </div>
+  <div class="col-sm-6 matter-banner">
+    <div class="slider">
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider">
+              <li>
+                  <img src="images/1.jpg" alt="">
+               </li>
+            </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 banner-mat">
+    <img class="img-responsive" src="images/ba.jpg" alt="">
+  </div>
+  <div class="clearfix"> </div>
+</div>
+<!--//banner-->
+<!--content-->
+<div class="content">
+  <div class="container">
+    <div class="content-top">
+      <h1>Recent Products</h1>
+      <div class="content-top1">
+        <div ng-repeat="x in products" class="col-md-3 col-md2">
+          <div class="col-md1 simpleCart_shelfItem">
+            <a href="#detailProduct">
+              <img class="img-responsive" src="{{ x.thumb }}" alt="" />
+            </a>
+            <h3><a href="single.html">  {{ x.name }}</a></h3>
+            <div class="price">
+                <h5 class="item_price">{{ x.price }}</h5>
+                <a href="#" class="item_add">Add To Cart</a>
+                <div class="clearfix"> </div>
+            </div>
+          </div>
+        </div>
+      <div ng-if="n == 4" class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--//content-->
