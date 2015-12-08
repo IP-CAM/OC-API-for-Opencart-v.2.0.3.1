@@ -28,7 +28,7 @@
       <div class="content-top1">
         <div ng-repeat="x in products" class="col-md-3 col-md2">
           <div class="col-md1 simpleCart_shelfItem">
-            <a href="#detailProduct">
+            <a href="#detailProduct/{{x.product_id}}">
               <img class="img-responsive" src="{{ x.thumb }}" alt="" />
             </a>
             <h3><a href="single.html">  {{ x.name }}</a></h3>
