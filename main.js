@@ -1,10 +1,10 @@
-require.config({
+requirejs.config({
     baseUrl: 'js',
     paths: {
         "jquery"           : 'jquery.min',
         "index"            : 'index',
         "imagezoom"        : 'imagezoom',
-        "flexslidermain"       : 'jquery.flexslider',
+        "flexslidermain"   : 'jquery.flexslider',
         "magnific-popup"   : 'jquery.magnific-popup',
         "memenu"           : 'memenu',
         "responsiveslides" : 'responsiveslides.min',
@@ -17,11 +17,7 @@ require.config({
     }
 });
 
-require(['menu','slide','popup','modflex'],function(showmenu,slider,popup,flex)
-  {
+require(['menu','popup'],function(showmenu,popup){
      showmenu.showmenu();
-     slider.slider();
-     flex.flexslider();
      popup.popup();
-  }
-);
+  });
