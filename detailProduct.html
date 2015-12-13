@@ -1,5 +1,4 @@
-<script src="js/require.js" data-main="page_detail"></script>
-<div class="single">
+<div class="single" ng-controller="productdetailCtrl">
 <div class="container">
 <div class="col-md-9">
 	<div class="col-md-5 grid">
@@ -36,7 +35,7 @@
 							<div class="clearfix"> </div>
 							</div>
 
-								<label  class="add-to item_price">$32.8</label>
+								<label  class="add-to item_price">{{product.price}}</label>
 
 							<div class="available">
 								<h6>Available Options :</h6>

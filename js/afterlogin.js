@@ -13,15 +13,16 @@ app.directive('footerMain',function(){
   }
 });
 
-app.config(function($routeProvider){
+app.config(['$routeProvider','$locationProvider','$httpProvider',function($routeProvider,$locationProvider,$httpProvider){
   $routeProvider
     .when('/detailProduct/:id',{
-      templateUrl:'detailProduct.html'
+      templateUrl:'detailProduct.html',
+      controller : 'productdetailCtrl'
     })
     .otherwise({
       templateUrl:'home.html',
-      controller :'customersCtrl'
+      controller :'homeCtrl'
   });
   //routing DOESN'T work without html5Mode
   //$locationProvider.html5Mode(true);
-});
+}]);

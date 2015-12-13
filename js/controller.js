@@ -1,4 +1,4 @@
-app.controller('customersCtrl', function($scope, $http) {
+app.controller('homeCtrl', function($scope, $http) {
   var req = {
              method: 'POST',
              url: 'http://localhost/oc-api/opencart/index.php?route=api/login/',
@@ -16,4 +16,15 @@ app.controller('customersCtrl', function($scope, $http) {
             }
     $http(req).success(function(response) {$scope.pesan = response.success;});
     $http.get("http://localhost/oc-api/opencart/index.php?route=api/product/").success(function(response) {$scope.products = response.products;});
+});
+
+app.controller('productdetailCtrl',function($scope,$routeParams,$compile,$http){
+      var id_product = $routeParams['id'];
+      $http.get("http://localhost/oc-api/opencart/index.php?route=api/product/get_product",{
+        params: {
+            product_id: id_product,
+        }
+     }).success(function(response) {
+        $scope.product = response.product;
+      });
 });
