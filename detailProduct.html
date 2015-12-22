@@ -4,21 +4,15 @@
 	<div class="col-md-5 grid">
 		<div class="flexslider">
 			  <ul class="slides">
-			    <li data-thumb="images/si.jpg">
-			        <div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
-			    </li>
-			    <li data-thumb="images/si1.jpg">
-			         <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-			    </li>
-			    <li data-thumb="images/si2.jpg">
-			       <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li ng-repeat="image in images" data-thumb="{{image.thumb}}">
+			        <div class="thumb-image"> <img src="{{image.popup}}" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
 			  </ul>
 		</div>
 	</div>
 <div class="col-md-7 single-top-in">
 						<div class="single-para simpleCart_shelfItem">
-							<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
+							<h1>{{product.name}}</h1>
 							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
 							<div class="star-on">
 								<ul>

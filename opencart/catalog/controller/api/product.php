@@ -19,7 +19,7 @@ class ControllerApiProduct extends Controller {
   					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
   				}
           //$json['product'] = json_encode($product);
-          $json['products'][] = array(
+          $json['products'] = array(
   					'product_id' => $product['product_id'],
   					'name'       => $product['name'],
   					'model'      => $product['model'],
@@ -66,6 +66,14 @@ class ControllerApiProduct extends Controller {
             'thumb'       => $image,
   					'reward'     => $product['reward']
   				);
+          $results = $this->model_catalog_product->getProductImages($id);
+
+    			foreach ($results as $result) {
+    				$json['images'][] = array(
+    					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
+    					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
+    				);
+    			}
 
       } else {
         $json['error'] = "No avaible products";

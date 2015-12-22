@@ -26,5 +26,6 @@ app.controller('productdetailCtrl',function($scope,$routeParams,$compile,$http){
         }
      }).success(function(response) {
         $scope.product = response.product;
+        $scope.images = response.images;
       });
 });
